@@ -22,8 +22,7 @@
     >
     >•	--test=cpu: This specifies that we are testing CPU performance.
     >
-    >•	--num-threads=4: This defines the number of threads used during the test. I chose 4 threads to simulate a multi-core processing environment, as most modern CPUs are multi-  
- core, and this would provide a better representation of how the CPU performs under parallel processing.
+    >•	--num-threads=4: This defines the number of threads used during the test. I chose 4 threads to simulate a multi-core processing environment, as most modern CPUs are multi-  core, and this would provide a better representation of how the CPU performs under parallel processing.
     >
     >• --cpu-max-prime=10000: This sets the maximum prime number used in the test. The higher the number, the more complex the computation. I selected 10000 to ensure the test is               challenging enough but not excessively long. It also helps measure the CPU’s ability to handle computationally intensive tasks.
     >
@@ -38,6 +37,36 @@
     >•	--memory-total-size=10G: This sets the total amount of memory to be tested to 10GB. It helps simulate a larger memory workload and measures the system’s performance when               handling significant amounts of data.
     >
     >•	run: This command runs the memory performance test.
+    >
+          Why these parameters were set
+	>•	Number of Threads (4): The number of threads simulates real-world multitasking environments. Using 4 threads represents a scenario where the system performs tasks concurrently. For systems with multiple CPU cores, running multiple threads can better utilize the available resources and provide a more accurate representation of performance.
+    >
+	>•	CPU Max Prime (10000): A value of 10000 for the maximum prime number is chosen to balance between the complexity of the computation and the time required for the test. This provides a reasonable level of CPU stress without overloading the system.
+    >
+	>•	Memory Block Size (1MB) and Total Size (10GB): A block size of 1MB is large enough to test the memory performance without causing excessive overhead. 10GB is a sufficiently large memory workload to simulate real-world scenarios where large datasets are being processed.
+    >
+     Explanation of the Results
+    >The values obtained from the sysbench tests represent specific performance metrics, including:
+    >
+	>•	CPU Performance Results:
+    >
+	>•	The output of the CPU test will show the number of prime numbers computed and the total time taken to complete the test.
+    >
+	>•	One of the key metrics is “operations per second” (ops/sec), which indicates how many operations the CPU can perform per second under the given configuration.
+    >
+	>•	A higher ops/sec value indicates better CPU performance.
+
+	>•	Memory Performance Results:
+    >
+	>•	The memory test will report “transferred” data (in GB) and “read/write” operations per second.
+    >
+	>•	This helps assess the system’s memory bandwidth and its ability to handle large-scale memory operations.
+    >
+	>•	A higher value indicates better memory throughput.
+
+
+
+
 
 
 
