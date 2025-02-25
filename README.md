@@ -63,7 +63,7 @@
 	>•	This helps assess the system’s memory bandwidth and its ability to handle large-scale memory operations.
     >
 	>•	A higher value indicates better memory throughput.
-
+	
 
 
 
@@ -84,7 +84,14 @@
     > Region: US East (N. Virginia). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI.
     >
     > 
-    
+    **For CPU performance**
+    >The t2.medium instance, with 2 vCPUs, has the best CPU performance (4212.17 events/sec), which is more than double the performance of t2.micro with 1 vCPU (2296.49 events/sec). However, c5d.large with 2 vCPUs shows lower performance (1918.08 events/sec), which is unexpected given its higher memory resources and focus on compute. This suggests that while there is some correlation between CPU performance and the number of vCPUs, other factors like the specific instance type optimization may play a significant role.
+   	
+   **For Memory performance**
+   >The c5d.large instance outperforms the others in memory performance with 20743.74 MiB/sec, which is expected due to its higher memory bandwidth optimization and focus on high-performance workloads. t2.micro and t2.medium have similar memory performance, with t2.medium showing a slight increase, which aligns with the increase in memory resources. The performance increase in memory seems more consistent with the increase in memory size.
+
+   The performance increase in CPU performance does not always increase proportionally with the number of vCPUs. The t2.medium performs best for CPU tasks, while c5d.large with more specialized capabilities performs lower, possibly due to its different optimization focus. However, memory performance shows a more consistent increase with larger resources, with c5d.large clearly outpacing the other two instances.
+   
 
     
     
