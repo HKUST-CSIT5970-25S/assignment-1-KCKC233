@@ -5,9 +5,9 @@
 
 ---
 
-### Name: 
-### Student Id: 
-### Email: 
+### Name: Zheng jiazhi
+### Student Id: 21071820
+### Email: jzhengbw@connect.ust.hk
 
 ---
 
@@ -126,3 +126,5 @@
     | Oregon - Oregon           |  4780          |  min/avg/max/mdev = 0.126/0.137/0.166/0.013 ms  |
  
     > Region: US East (N. Virginia), US West (Oregon). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI. All instances are `c5.large`. Note: Use public IP address when using iPerf within the same region.
+
+    For instances deployed in different regions, the network performance shows significantly lower TCP bandwidth (e.g., 33.2 Mbps for N. Virginia - Oregon) and higher RTT (e.g., 64.166/64.175/64.199 ms for N. Virginia - Oregon) compared to instances within the same region.
