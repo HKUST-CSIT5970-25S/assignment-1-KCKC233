@@ -108,6 +108,9 @@
 
     > Region: US East (N. Virginia). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI. Note: Use private IP address when using iPerf within the same region. You'll need iPerf for measuring TCP bandwidth and Ping for measuring Round-Trip time.
 
+    In the same region, the network performance between instances of the same type shows higher TCP bandwidth (e.g., 4080 Mbps for t3.medium - t3.medium) and lower RTT (e.g., 0.192/0.265/1.029 ms for t3.medium - t3.medium).
+
+    Between different types, the network performance tends to have lower TCP bandwidth (e.g., 2140 Mbps for t3.medium - c5n.large) and higher RTT (e.g., 0.733/0.742/0.763 ms for t3.medium - c5n.large).
 
 
 
@@ -119,7 +122,7 @@
     | Connection                | TCP b/w (Mbps) | RTT (ms) |
     | ------------------------- | -------------- | -------- |
     | N. Virginia - Oregon      |                |          |
-    | N. Virginia - N. Virginia |                |          |
+    | N. Virginia - N. Virginia |  4960          |  min/avg/max/mdev = 0.251/0.262/0.277/0.007 ms  |
     | Oregon - Oregon           |                |          |
  
     > Region: US East (N. Virginia), US West (Oregon). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI. All instances are `c5.large`. Note: Use public IP address when using iPerf within the same region.
